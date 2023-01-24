@@ -16,12 +16,15 @@ library(datasauRus)
 
 ### Exercise 1
 
-Remove this text, and add your answer for Exercise 1 here.
+```{r}
+dim(datasaurus_dozen)
+datasaurus_dozen$dataset<-as.factor(datasaurus_dozen$dataset)
+summary(datasaurus_dozen)
+table(datasaurus_dozen$dataset)
+```
+
 
 ### Exercise 2
-
-The answers for this exercise are given for you below.
-But you should clean up some of the narrative so that it only includes what you want to turn in.
 
 First let's plot the data in the dino dataset:
 
@@ -37,7 +40,7 @@ And next calculate the correlation between `x` and `y` in this dataset:
 
 ```{r cor-dino}
 dino_data %>%
-  summarize(r = cor(x, y))
+  summarize(r = cor(x,y))
 ```
 
 ### Exercise 3
