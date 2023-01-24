@@ -82,9 +82,19 @@ The circle data set has a higher correlation than the dino data set.
 
 ### Exercise 5
 
-Add code and narrative as needed.
+```{r plot the entire data set}
+ggplot(datasaurus_dozen, aes(x=x, y=y, color = dataset)) + 
+  geom_point() +
+  facet_wrap(~dataset, ncol = 3) +
+  theme(legend.position = "none")
+```
+```{r correlation of all the dataset}
+datasaurus_dozen %>%
+  group_by(dataset) %>%
+  summarize(r = cor(x,y)) %>%
+  print(13)
+```
 
-To add R chunks either type out the backticks, curly braces, and the letter `r` or use the Insert chunk button above, green C+.
 
 
 
